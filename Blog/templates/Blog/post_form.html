@@ -1,0 +1,61 @@
+{% extends 'Blog/base.html' %}
+{% load static %}
+
+
+
+
+{% block contenido %}
+
+<div class="container">
+    <div class="row align-content-center">
+        <div class="col-md-6 mx-auto">
+            <form method="post" enctype="multipart/form-data" class="post-form">
+                {% csrf_token %}
+
+
+
+                <div class="form-group mt-5">
+                    <div class="form-group col-md-6 mb-3">
+                        <label>Titulo: </label>
+                        {{ form.titulo}}
+                    </div>
+                    <div class="form-group col-md-6 mb-3">
+                        <label>Subtitulo: </label>
+                        {{ form.subtitulo}}
+                    </div>
+                    <div class="form-group col-md-6 mb-3">
+                        <label>Contenido: </label>
+                        {{ form.comentario}}
+                    </div>
+                    <div class="form-group col-md-6 mb-3">
+                        <label>Etiquetas: </label>
+                        {{ form.etiqueta}}
+                    </div>
+
+
+
+                    <div class="form-group col-md-6 mb-3">
+                        <label>Imagen: </label>
+                        {{ form.imagen}}
+                    </div>
+
+                    <div class="form-group col-md-6 mb-3">
+                        <label>Slug: </label>
+                        {{ form.slug}}
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+
+
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+{% endblock contenido %}

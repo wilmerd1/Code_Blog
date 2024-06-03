@@ -1,0 +1,64 @@
+{% load static %}
+
+<!doctype html>
+<html lang="es">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Andres">
+	<link rel="shortcut icon" href="{% static 'Blog/favicon.ico' %}">
+	<meta name="description" content="" />
+	<meta name="keywords" content="bootstrap, bootstrap5" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+	<link rel="stylesheet" href="{% static 'Blog/fonts/icomoon/style.css' %}">
+	<link rel="stylesheet" href="{% static 'Blog/fonts/flaticon/font/flaticon.css' %}">
+	<link rel="stylesheet" href="{% static 'Blog/css/tiny-slider.css' %}">
+	<link rel="stylesheet" href="{% static 'Blog/css/aos.css' %}">
+	<link rel="stylesheet" href="{% static 'Blog/css/glightbox.min.css' %}">
+	<link rel="stylesheet" href="{% static 'Blog/css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'Blog/css/flatpickr.min.css' %}">
+
+	
+
+	<title>DevLife &mdash; Blog </title>
+</head>
+
+<body>
+
+	{% include 'Blog/components/navbar.html' %}
+
+	{% block contenido %}
+
+
+
+	{% endblock contenido %}
+
+
+	{% include 'Blog/components/footer.html' %}
+
+	<!-- Preloader -->
+	<div id="overlayer"></div>
+	<div class="loader">
+		<div class="spinner-border text-primary" role="status">
+			<span class="visually-hidden">Loading...</span>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script src="{% static 'Blog/js/bootstrap.bundle.min.js' %}"></script>
+	<script src="{% static 'Blog/js/tiny-slider.js' %}"></script>
+	<script src="{% static 'Blog/js/flatpickr.min.js' %}"></script>
+	<script src="{% static 'Blog/js/aos.js' %}"></script>
+	<script src="{% static 'Blog/js/glightbox.min.js' %}"></script>
+	<script src="{% static 'Blog/js/navbar.js' %}"></script>
+	<script src="{% static 'Blog/js/counter.js' %}"></script>
+	<script src="{% static 'Blog/js/custom.js' %}"></script>
+
+</body>
+
+</html>
