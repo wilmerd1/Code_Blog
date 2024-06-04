@@ -4,7 +4,7 @@
 
 {% block contenido %}
 
-{% if user.is_authenticated %}
+
 
 <section class="section">
     <div class="container">
@@ -46,14 +46,12 @@
 
                     <a class="btn btn-danger" type="button" href="/Blog/{{ post.slug }}/delete/"
                         role="button">Eliminar</a>
-                    <a class="btn btn-primary" type="button" href="/Blog/{{ post.slug }}/edit/"
-                        role="button">Editar</a>
+                    <a class="btn btn-primary" type="button" href="/Blog/{{ post.slug }}/edit/" role="button">Editar</a>
 
                     {% endif %}
 
                     {% if post.autor == request.user %}
-                    <a class="btn btn-primary" type="button" href="/Blog/{{ post.slug }}/edit/"
-                        role="button">Editar</a>
+                    <a class="btn btn-primary" type="button" href="/Blog/{{ post.slug }}/edit/" role="button">Editar</a>
                     {% endif %}
                     <a class="btn btn-primary" type="button" href="/Blog/{{ post.slug }}/" role="button">Leer más</a>
 
@@ -71,15 +69,5 @@
 
 
 
-
-{% else %}
-<div class="mx-auto" style="width: 300px;">
-    <h3>You are not logged in !</h3>
-</div><br>
-<div class="mx-auto" style="width: 150px;">
-    <a href="{% url 'Blog:login' %}">Log in</a> |
-    <a href="{% url 'Blog:register' %}">Sign Up</a>
-</div>
-{% endif %}
 
 {% endblock contenido %}
