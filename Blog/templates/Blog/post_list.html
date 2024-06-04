@@ -1,0 +1,73 @@
+{% extends 'Blog/base.html' %}
+{% load static %}
+
+
+{% block contenido %}
+
+
+
+<section class="section">
+    <div class="container">
+
+        <div class="row mb-4">
+            <div class="col-sm-6">
+                <h2 class="posts-entry-title text-capitalize">Nuestros Post</h2>
+            </div>
+
+        </div>
+
+        <div class="row">
+            {% for post in posts %}
+            <div class="col-lg-4 mb-4">
+                <div class="post-entry-alt">
+                    <a href="single.html" class="img-link"><img src="/media/{{post.imagen}}" alt="Image"
+                            class="img-fluid"></a>
+                    <div class="excerpt">
+
+
+                        <h2 class="post-title fw-bold"><a href="/Blog/{{post.slug}}/">{{post.titulo}}</a></h2>
+                        <h6 class="post-title"><a href="/Blog/{{post.slug}}/">{{post.subtitulo}}</a></h6>
+                        <div class="post-meta align-items-center text-left clearfix">
+                            <figure class="author-figure mb-0 me-3 float-start"> <img
+                                    src="{{post.autor.avatar.imagen.url}}" alt="Image" class="img-fluid"></figure>
+                            <span class="d-inline-block mt-1">By <a href="#">{{post.autor}}</a></span>
+                            <span>&nbsp;-&nbsp; {{post.fecha_publicacion|date:"A f F t, o "}}</span>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="flex-row d-flex justify-content-between align-items-end mt-2">
+
+
+
+
+                    {% if request.user.is_staff %}
+
+                    <a class="btn btn-danger" type="button" href="/Blog/{{ post.slug }}/delete/"
+                        role="button">Eliminar</a>
+                    <a class="btn btn-primary" type="button" href="/Blog/{{ post.slug }}/edit/" role="button">Editar</a>
+
+                    {% endif %}
+
+                    {% if post.autor == request.user %}
+                    <a class="btn btn-primary" type="button" href="/Blog/{{ post.slug }}/edit/" role="button">Editar</a>
+                    {% endif %}
+                    <a class="btn btn-primary" type="button" href="/Blog/{{ post.slug }}/" role="button">Leer más</a>
+
+                </div>
+            </div>
+
+
+            {% endfor %}
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+
+{% endblock contenido %}

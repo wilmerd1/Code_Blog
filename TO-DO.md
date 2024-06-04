@@ -3,12 +3,18 @@ python -m venv .venv
 ## activate the venv
 venv/bin/activate
 .venv/Source/activate
-## Instalación Django
-pip install django
+
+## Instalación requirements
+-- pip freeze > requirements.txt
+pip install -r requirements.txt
 
 ## Creación apps
+django-admin startproject config .
 python manage.py startapp <Nombre App>
 
-# Requisitos
-- Create a requirements file that lists all your project's dependencies
-pip freeze > requirements.txt
+
+## Create a superuser (admin) account:
+python manage.py createsuperuser
+admin
+123
+

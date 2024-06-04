@@ -1,0 +1,103 @@
+<div class="site-mobile-menu site-navbar-target">
+    <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close">
+            <span class="icofont-close js-menu-toggle"></span>
+        </div>
+    </div>
+    <div class="site-mobile-menu-body"></div>
+</div>
+
+<nav class="site-nav">
+    <div class="container">
+        <div class="menu-bg-wrap">
+            <div class="site-navigation">
+                <div class="row g-0 align-items-center">
+
+
+                    <div class="col-2 {% if request.path == " /" %} active {% endif %}" aria-current="page"">
+
+                        <a href=" {% url 'Blog:index' %}" class="logo m-0 float-start">DevLife Blog<span
+                            class="text-primary">.</span></a>
+                    </div>
+                    <div class="col-8 text-center">
+
+                        <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto">
+                            <li class=" {% if request.path == " /" %} active {% endif %} " aria-current=" page"">
+
+                                <a href="{% url 'Blog:index' %}">Home</a>
+                            </li>
+                            <li class="{% if request.path == " /Blog/list/" %} active {% endif %}"
+                                aria-current="page" "><a href=" /Blog/list/">Posts</a></li>
+
+                            <li class="{% if request.path == " /Blog/add/" %} active {% endif %}"
+                                aria-current="page" "><a href=" /Blog/add/">Add Post</a></li>
+                            <li class="{% if request.path == " /about/" %} active {% endif %}"
+                                aria-current="page" "><a href=" {% url 'Blog:about' %}">About</a></li>
+
+
+
+
+                            </li>
+                            {% if not request.user.is_authenticated %}
+
+                            <li class="{% if request.path == " /login/" %} active {% endif %}"
+                                aria-current="page" "><a href=" {% url 'Blog:login' %}">Log In</a></li>
+
+                            <li class="{% if request.path == " /register/" %} active {% endif %}"
+                                aria-current="page" "><a href=" {% url 'Blog:register' %}">Sign Up</a></li>
+
+                            {% else %}
+
+
+                            <li class="has-children">
+
+
+                                <a href=""><img src="{{request.user.avatar.imagen.url}}" alt="" height="25px"
+                                        class="pr-1">{{ request.user.username | capfirst }}</a>
+
+                                <ul class="dropdown flex-container">
+                                    <li class="float-left"><a href="#">Edit profile</a></li>
+                                    {% if user.is_authenticated %}
+                                    <li class="float-left">
+                                        <form action="{% url 'Blog:logout' %}" method="post">
+                                            {% csrf_token %}
+                                    <li>
+                                        <button type="submit" class="btn text-danger" href="/Blog/">Logout</button>
+                                    </li>
+
+                                    </form>
+                            </li>
+                            {% else %}
+
+                            {% endif %}
+                            <li class="clear"></li>
+                        </ul>
+                        </li>
+
+                        {% endif %}
+
+
+
+
+
+                        </ul>
+                    </div>
+
+                    {% comment %}
+                    <div class="col-2 text-end">
+                        <a href="#"
+                            class="burger ms-auto float-end site-menu-toggle js-menu-toggle d-inline-block d-lg-none light">
+                            <span></span>
+                        </a>
+                        <form action="#" class="search-form d-none d-lg-inline-block">
+                            <input type="text" class="form-control" placeholder="Search...">
+                            <span class="bi-search"></span>
+                        </form>
+                    </div>
+                    {% endcomment %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

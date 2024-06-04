@@ -3,7 +3,6 @@
 Comisión: 54135
 Alumno: Wilmer Andres Duque Olaya
 
-
 ## Acerca del proyecto
 
 Se creo una aplcación de blog, donde permita crear un post y agregar una imagen.
@@ -13,12 +12,11 @@ Contienelos archivos estaticos (html, css, js) y principales de la aplicación, 
 2. Post: permite cargar todos los posts creados, mostrando la imagen que se cargo, titulo, subtitulo, imagen del usuario que creo el post, nombre y fecha de creación.
 3. Add Post: Muestra forms que permite crear un post se uso la libreria de Summernote que ayuda al usuario funcional la creación de los comentarios.
 4. About: Información desarrollador
-5. Login: 
-6. Sign Up: 
+5. Login:
+6. Sign Up:
 7. User
 
 ## Aplicaciones
-
 
 ## Modelos
 
@@ -50,6 +48,8 @@ To run the Code_Blog application locally, please follow these steps:
    cd Code_Blog
    ```
 
+   ````
+
 3. Create a virtual environment and activate it (optional but recommended):
 
    ````
@@ -57,17 +57,23 @@ To run the Code_Blog application locally, please follow these steps:
    source venv/bin/activate
    ```
 
+   ````
+
 4. Install the project dependencies:
 
    ````
    pip install -r requirements.txt
    ```
 
+   ````
+
 5. Apply the database migrations:
 
    ````
    python manage.py migrate
    ```
+
+   ````
 
 6. Create a superuser (admin) account:
 
@@ -77,11 +83,15 @@ To run the Code_Blog application locally, please follow these steps:
 
    Follow the prompts to enter your desired username and password.
 
+   ````
+
 7. Start the development server:
 
    ````
    python manage.py runserver
    ```
+
+   ````
 
 8. Open your web browser and access the application at [http://localhost:8000](http://localhost:8000).
 

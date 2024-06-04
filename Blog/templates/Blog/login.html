@@ -1,0 +1,23 @@
+{% extends 'Blog/base.html' %}
+
+{% block titulo %}
+Login
+{% endblock titulo %}
+
+{% block contenido %}
+
+<div class="container">
+    <h1 class="mt-4">Login</h1>
+</div>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="hidden" name="next" value="{% url 'Blog:index' %}">
+
+    <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+    <a href="{% url 'Blog:index' %}" class="btn btn-secondary">Cancelar</a>
+</form>
+
+
+{% endblock contenido %}

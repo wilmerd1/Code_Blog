@@ -1,0 +1,48 @@
+{% extends 'Blog/base.html' %}
+{% load static %}
+
+{% block contenido %}
+
+<section class="section posts-entry">
+	<div class="container">
+		
+		<div class="row g-3">
+			<div class="col-md-9 order-md-2">
+				<div class="row g-3">
+					{% for post in posts.reverse|slice:2 %}
+					<div class="col-md-6">
+						<div class="blog-entry">
+							<a href="/Blog/{{post.slug}}/" class="img-link">
+								<img src="/media/{{post.imagen}}" alt="Image" class="img-fluid">
+							</a>
+							<span class="date">{{post.fecha_publicacion|date:"A f F t, o "}}</span>
+
+							<h2><a href="/Blog/{{post.slug}}/">{{post.titulo}}</a></h2>
+							<p>{{post.comentario|striptags|slice:':100'}}</p>
+							<p><a href="/Blog/{{post.slug}}/" class="btn btn-sm btn-outline-primary">Leer más</a></p>
+						</div>
+					</div>
+					{% endfor %}
+					
+				</div>
+			</div>
+			<div class="col-md-3">
+				<ul class="list-unstyled blog-entry-sm">
+					{% for post in posts|slice:3 %}
+					<li>
+						<span class="date">{{post.fecha_publicacion|date:"A f F t, o "}}</span>
+						<h3><a href="/Blog/{{post.slug}}/">{{post.titulo}}</a></h3>
+						<p>{{post.comentario|striptags|slice:':50'}}</p>
+						<p><a href="/Blog/{{post.slug}}/" class="read-more">Continuar leyendo</a></p>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+
+			
+		</div>
+	</div>
+
+</section>
+
+	{% endblock contenido %}
