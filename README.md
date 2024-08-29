@@ -96,3 +96,5 @@ To run the Code_Blog application locally, please follow these steps:
 8. Open your web browser and access the application at [http://localhost:8000](http://localhost:8000).
 
 9. To access the admin dashboard, go to [http://localhost:8000/admin](http://localhost:8000/admin) and login with your superuser account.
+
+![alt text](image.png)
